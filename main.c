@@ -111,7 +111,7 @@ void run_tests(){
 }
 
 void show_buff(uint8_t i) {
-    DEBUG_PRINT("i: %d st %d end %d counter: %d ", i, put.i_start, put.i_end, put.fullness_counter);
+    DEBUG_PRINT("i: %d st %d end %d counter: %d buffer: ", i, put.i_start, put.i_end, put.fullness_counter);
     for (uint8_t j = 0; j < size; j++) {
         DEBUG_PRINT("%c", buffer[j]);
     }
@@ -119,6 +119,7 @@ void show_buff(uint8_t i) {
 }
 
 int test_put(uint8_t times, char *val) {
+    DEBUG_PRINT("test_put times: %d val: %c\n", times, *val);
     (*val)--;
     for (uint8_t i = 0; i < times; i++) {
         if (put_char(++(*val)) == buffer_overflow) {
@@ -131,6 +132,7 @@ int test_put(uint8_t times, char *val) {
 }
 
 int test_get(uint8_t times) {
+    DEBUG_PRINT("test_get times: %d\n", times);
     int c;
     for (uint8_t i = 0; i < times; i++) {
         c = get_char();
