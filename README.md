@@ -1,6 +1,14 @@
 # logical_cyclic_buffer
 
 This project implements a cyclic buffer with capabilities for adding and extracting elements, as well as checking for overflow.
+## Tutorial
+Read in main.c from top to down function implementations:
+1. put_char
+2. get_char
+3. description in prototype test_put
+4. description in prototype test_get
+5. all implementation run_tests
+After this u must understand realization and tests which check realization logical_cyclic buffer
 
 ## Compilation
 
